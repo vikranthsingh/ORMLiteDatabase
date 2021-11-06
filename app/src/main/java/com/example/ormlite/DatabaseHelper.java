@@ -14,9 +14,9 @@ import java.sql.SQLException;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final String DATABASE_NAME = "notes.db";
     private static final int DATABASE_Version = 1;
-    private static final String TABLE_NAME = "Note_Table";
-    public Dao<Notes, Integer> noteDao = null;
-    public RuntimeExceptionDao<Notes, Integer> noteRuntimeExceptionDao = null;
+
+    private Dao<Notes, Integer> noteDao = null;
+    private RuntimeExceptionDao<Notes, Integer> noteRuntimeExceptionDao = null;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_Version, R.raw.ormlite_config);

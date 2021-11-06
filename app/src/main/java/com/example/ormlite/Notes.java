@@ -4,25 +4,24 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.util.Date;
-//@DatabaseTable(tableName = "myTable")
-public class Notes {
+//@DatabaseTable(tableName = "myTable")     //In case you want to change table name.
+public class Notes {                        //this will create table called "Note".
     @DatabaseField(generatedId = true)
-    int id;
+    int id;                                 //column name
     @DatabaseField
-    String subject;
+    String subject;                         //column name
     @DatabaseField
-    String text;
+    String text;                            //column name
     @DatabaseField
-    Date date;
+    Date date;                              //column name
 
     public Notes() {
     }
 
-    public Notes(int id, String subject, String text, Date date) {
-        this.id = id;
+    public Notes(String subject, String text) {
         this.subject = subject;
         this.text = text;
-        this.date = date;
+        this.date = new Date(System.currentTimeMillis());
     }
 
     @Override
